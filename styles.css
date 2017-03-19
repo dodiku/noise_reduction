@@ -1,0 +1,69 @@
+html {
+  background-color: MediumAquaMarine;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  color: #222;
+  font-size: 0.9em;
+}
+
+h1 {
+  font-size: 4em;
+  text-align: center;
+  margin-bottom: 0.5em;
+  margin-top: 2em;
+}
+
+h2 {
+  font-size: 2.2em;
+  font-weight:normal;
+  text-align: center;
+  margin-bottom: 48px;
+  margin-top: 0px;
+}
+
+.text_container {
+  margin: auto;
+  margin-top: 76px;
+  max-width: 600px;
+  line-height: 2em;
+  margin-bottom: 100px;
+}
+
+h3 {
+  font-size: 1.6em;
+  font-weight: bold;
+  /* text-align: center; */
+  margin-bottom: 0.5em;
+  margin-top: 4em;
+}
+
+.code{
+  border: 0.5px solid lightgray;
+  background-color: GhostWhite;
+  border-radius: 3px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 12px;
+  padding-left: 12px;
+  color: gray;
+}
+
+.duration{
+  color: rgba(34,34,34,0.5);
+  font-style: italic;
+  margin-top: -20px;
+}
+
+ul {
+  line-height: 36px;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 128px;
+  margin-bottom: 64px;
+  color: rgba(255, 255, 255, 0.4);
+}

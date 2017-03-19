@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <META NAME="ROBOTS" CONTENT="NOINDEX, FOLLOW">
+  <META NAME="ROBOTS" CONTENT="INDEX, NOFOLLOW">
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+  <title>SpeakApp: Audio</title>
+  <link type="text/css" rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+</head>
+
+
+<body>
+  <script>
+      function changeDuration(id){
+        console.log(id)
+        console.log(typeof(id))
+        var dur = document.getElementById(id);
+        dur = dur.duration;
+        console.log(dur)
+        durationID = id + "_duration";
+        document.getElementById(durationID).innerHTML = ("Duration: " + dur);
+      };
+  </script>
+
+  <h1>SpeakApp</h1>
+  <h2>Audio Tests</h2>
+  <div class="text_container">
+    <p>The results below were generated using <a href="http://librosa.github.io/librosa/index.html">LibROSA</a>.<br>
+      See all code on the following <a href="https://github.com/dodiku/noise_reduction/settings">GitHub repository</a>.</p>
+
+
+  <h3>06_office.wav</h3>
+  <ul>
+    <li>Original sample:<br><audio id="01" src="samples/06_office.m4a" controls preload></audio>
+      <br><div class="duration" id="01_duration">error<div></li>
+    <li>Noise reduction:<br><audio id="02" src="samples_trimmed/06_office.wav" controls preload></audio>
+      <br><div class="duration" id="02_duration">error<div></li>
+    <li>Silence trimming (after noise reduction):<br><audio id="03" src="samples_trimmed/06_office.wav" controls preload></audio>
+      <br><div class="duration" id="03_duration">error<div></li>
+  </ul>
+
+  <h3>Further tests to do:</h3>
+  <ul>
+    <li>Reverberation - Enhance the quality of the sound and improve style</li>
+    <li>Bass bosster - Enhance the quality of the sound and improve style</li>
+    <li>Check if the speech manipulation is improving or harming the speech-to-text results and language recognition results</li>
+</div>
+<script>
+  window.onload = function () {
+    changeDuration("01");
+    changeDuration("02");
+    changeDuration("03");
+  }
+</script>
+</body>
+</html>
