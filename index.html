@@ -33,38 +33,33 @@
         See all code on the following <a href="https://github.com/dodiku/noise_reduction/settings">GitHub repository</a>.</p>
 
     <h3>Introduction</h3>
-    <div>
+      This is a very quick and dirty way to do reduce noise on an audio recording, and to trim moments of silence within the recording.<br>
+      This effort was done in Python3 using LibROSA and pysndfx. These Python packages were chosen for the job because they use simple and efficient implementation of well known algorithms, and since (as far as I understand) we are allowed to use them, while giving them a mention/credit.<br>
+
+      <strong>A few things to keep in mind about noise reduction:</strong>
+        <ul>
+          <li>Noise reduction problems are traditionally handle cases where a noise should be removed from a <em>voice</em> recording. All relevant algorithms and techniques, including the well known MFCC, were targeted to solve a voice recognition problem first.<br>We can assume that noise can appear also in messages where there was no intent to record human voice (maybe a musical piece), but this scenario should be handled as a side case.</li>
+          <li>Most of the well known techniques to reduce noise are very sensitive, and almost not relevant on oudoor scenarios (e.g. street), which are probably SpeakApp's most common scenarios. Therefore, I decided not to use the MFCC technique for this experiment.</li>
+          <li>The fields of noise reduction and speech recognition are currently are under an ongoing research, with almost no break-throughs in recent years.</li>
+        </ul>
+    <h3>Results</h3>
+      <h4>06_office.wav</h4>
       <ul>
-        <li><strong>Noise Reduction - </strong> For these tests, In order to reduce noise I used the following logic:
-          <ol>
-            <li>Look for the most dominant frequencies on the recording.</li>
-            <ol>
-              <li>If the most dominant frequencies are the <a href="https://en.wikipedia.org/wiki/Voice_frequency">human voice frequencies</a> -- amplify them, and turn down the amplitude of all other frequencies.
-              <li>If the most dominant frequencies are NOT the human voice frequencies -- check if the human voice frequencies exist on the recording.
-                <ol>
-                  <li>If they exist, amplify them.</li>
-                  <li>If they don't exist, amplify the most dominant frequencies.</li>
-                </ol>
-            </ol>
-          </ol>
-        </li>
+        <li>Original sample:<br><audio id="01" src="https://dodiku.github.io/noise_reduction/00_samples/06_office.m4a" controls preload></audio>
+          <br><div class="duration" id="01_duration">reading audio file duration...<div></li>
+        <li><strong>Noise reduction:</strong><br><audio id="02" src="https://dodiku.github.io/noise_reduction/01_samples_noise_reduced/06_office.wav" controls preload></audio>
+          <br><div class="duration" id="02_duration">reading audio file duration...<div></li>
+        <li>Noise reduction + <strong>silence trimming</strong>:<br><audio id="03" src="https://dodiku.github.io/noise_reduction/02_samples_trimmed/06_office.wav" controls preload></audio>
+          <br><div class="duration" id="03_duration">reading audio file duration...<div></li>
+        <li>Noise reduction + silence trimming + <strong>sound style enhancement</strong>:<br><audio id="04" src="https://dodiku.github.io/noise_reduction/03_samples_enhanced/06_office.wav" controls preload></audio>
+          <br><div class="duration" id="04_duration">reading audio file duration...<div></li>
       </ul>
-    </div>
-    <h3>06_office.wav</h3>
-    <ul>
-      <li>Original sample:<br><audio id="01" src="https://dodiku.github.io/noise_reduction/samples/06_office.m4a" controls preload></audio>
-        <br><div class="duration" id="01_duration">reading audio file duration...<div></li>
-      <li>Noise reduction:<br><audio id="02" src="https://dodiku.github.io/noise_reduction/samples_trimmed/06_office.wav" controls preload></audio>
-        <br><div class="duration" id="02_duration">reading audio file duration...<div></li>
-      <li>Silence trimming (after noise reduction):<br><audio id="03" src="https://dodiku.github.io/noise_reduction/samples_trimmed/06_office.wav" controls preload></audio>
-        <br><div class="duration" id="03_duration">reading audio file duration...<div></li>
-    </ul>
 
     <h3>Further tests to do:</h3>
     <ul>
       <li>Reverberation - Enhance the quality of the sound and improve style</li>
       <li>Bass bosster - Enhance the quality of the sound and improve style</li>
-      <li>Check if the speech manipulation is improving or harming the speech-to-text results and language recognition results</li>
+      <li>Check if the speech manipulation is improving or harming the speech-to-text results and language recognition results.</li>
       <li>The processes that were described above could happed on the fly, during the recording.</li>
     </ul>
   <br>Dror
@@ -74,6 +69,7 @@
       changeDuration("01");
       changeDuration("02");
       changeDuration("03");
+      changeDuration("04");
   },1000);
 </script>
 

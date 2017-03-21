@@ -78,7 +78,7 @@ receives a destination path, file name, audio matrix, and sample rate,
 generates a wav file based on input
 ------------------------------------'''
 def output_file(destination ,filename, y, sr):
-    destination = destination + filename + '.wav'
+    destination = destination + filename[:-4] + '.wav'
     librosa.output.write_wav(destination, y, sr)
 
 
