@@ -59,9 +59,9 @@ h4 {
 }
 
 .duration{
-  color: rgba(34,34,34,0.5);
+  color: rgba(34,34,34,0.6);
   font-style: italic;
-  margin-top: -20px;
+  /*margin-top: -20px;*/
 }
 
 ul {

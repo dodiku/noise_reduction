@@ -8,7 +8,8 @@
   <META NAME="ROBOTS" CONTENT="INDEX, NOFOLLOW">
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
   <title>SpeakApp: Audio</title>
-  <link type="text/css" rel="stylesheet" href="https://dodiku.github.io/noise_reduction/styles.css">
+  <!-- <link type="text/css" rel="stylesheet" href="https://dodiku.github.io/noise_reduction/styles.css"> -->
+  <link type="text/css" rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" type="image/png" href="images/favicon.png">
 </head>
 
@@ -16,11 +17,8 @@
 <body>
   <script>
       function changeDuration(id){
-        console.log(id)
-        console.log(typeof(id))
         var dur = document.getElementById(id);
         dur = dur.duration;
-        console.log(dur)
         durationID = id + "_duration";
         document.getElementById(durationID).innerHTML = ("Duration: " + dur);
       };
@@ -43,35 +41,140 @@
           <li>The fields of noise reduction and speech recognition are currently are under an ongoing research, with almost no break-throughs in recent years.</li>
         </ul>
     <h3>Results</h3>
-      <h4>06_office.wav</h4>
+
+      <h4>01_counting.m4a</h4>
       <ul>
-        <li>Original sample:<br><audio id="01" src="https://dodiku.github.io/noise_reduction/00_samples/06_office.m4a" controls preload></audio>
-          <br><div class="duration" id="01_duration">reading audio file duration...<div></li>
-        <li><strong>Noise reduction:</strong><br><audio id="02" src="https://dodiku.github.io/noise_reduction/01_samples_noise_reduced/06_office.wav" controls preload></audio>
-          <br><div class="duration" id="02_duration">reading audio file duration...<div></li>
-        <li>Noise reduction + <strong>silence trimming</strong>:<br><audio id="03" src="https://dodiku.github.io/noise_reduction/02_samples_trimmed/06_office.wav" controls preload></audio>
-          <br><div class="duration" id="03_duration">reading audio file duration...<div></li>
-        <li>Noise reduction + silence trimming + <strong>sound style enhancement</strong>:<br><audio id="04" src="https://dodiku.github.io/noise_reduction/03_samples_enhanced/06_office.wav" controls preload></audio>
-          <br><div class="duration" id="04_duration">reading audio file duration...<div></li>
+
+        <li>Original sample:<br>
+          <div class="duration" id="01_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("01")' id="01" src="https://dodiku.github.io/noise_reduction/00_samples/01_counting.m4a" controls preload></audio></li>
+
+        <li><strong>Noise reduction:</strong><br>
+          <div class="duration" id="02_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("02")' id="02" src="https://dodiku.github.io/noise_reduction/01_samples_noise_reduced/01_counting.wav" controls preload></audio></li>
+
+        <li>Noise reduction + <strong>silence trimming</strong>:<br>
+          <div class="duration" id="03_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("03")' id="03" src="https://dodiku.github.io/noise_reduction/02_samples_trimmed/01_counting.wav" controls preload></audio></li>
+
+        <li>Noise reduction + silence trimming + <strong>sound style enhancement</strong>:<br>
+          <div class="duration" id="04_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("04")' id="04" src="https://dodiku.github.io/noise_reduction/03_samples_enhanced/01_counting.wav" controls preload></audio></li>
+
+      </ul>
+
+      <h4>02_wind_and_cars.m4a</h4>
+      <ul>
+
+        <li>Original sample:<br>
+          <div class="duration" id="05_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("05")' id="05" src="https://dodiku.github.io/noise_reduction/00_samples/02_wind_and_cars.m4a" controls preload></audio></li>
+
+        <li><strong>Noise reduction:</strong><br>
+          <div class="duration" id="06_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("06")' id="06" src="https://dodiku.github.io/noise_reduction/01_samples_noise_reduced/02_wind_and_cars.wav" controls preload></audio></li>
+
+        <li>Noise reduction + <strong>silence trimming</strong>:<br>
+          <div class="duration" id="07_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("07")' id="07" src="https://dodiku.github.io/noise_reduction/02_samples_trimmed/02_wind_and_cars.wav" controls preload></audio></li>
+
+        <li>Noise reduction + silence trimming + <strong>sound style enhancement</strong>:<br>
+          <div class="duration" id="08_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("08")' id="08" src="https://dodiku.github.io/noise_reduction/03_samples_enhanced/02_wind_and_cars.wav" controls preload></audio></li>
+
+      </ul>
+
+      <h4>03_truck.m4a</h4>
+      <ul>
+
+        <li>Original sample:<br>
+          <div class="duration" id="09_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("09")' id="09" src="https://dodiku.github.io/noise_reduction/00_samples/03_truck.m4a" controls preload></audio></li>
+
+        <li><strong>Noise reduction:</strong><br>
+          <div class="duration" id="10_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("10")' id="10" src="https://dodiku.github.io/noise_reduction/01_samples_noise_reduced/03_truck.wav" controls preload></audio></li>
+
+        <li>Noise reduction + <strong>silence trimming</strong>:<br>
+          <div class="duration" id="11_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("11")' id="11" src="https://dodiku.github.io/noise_reduction/02_samples_trimmed/03_truck.wav" controls preload></audio></li>
+
+        <li>Noise reduction + silence trimming + <strong>sound style enhancement</strong>:<br>
+          <div class="duration" id="12_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("12")' id="12" src="https://dodiku.github.io/noise_reduction/03_samples_enhanced/03_truck.wav" controls preload></audio></li>
+
+      </ul>
+
+      <h4>04_voices.m4a</h4>
+      <ul>
+
+        <li>Original sample:<br>
+          <div class="duration" id="13_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("13")' id="13" src="https://dodiku.github.io/noise_reduction/00_samples/04_voices.m4a" controls preload></audio></li>
+
+        <li><strong>Noise reduction:</strong><br>
+          <div class="duration" id="14_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("14")' id="14" src="https://dodiku.github.io/noise_reduction/01_samples_noise_reduced/04_voices.wav" controls preload></audio></li>
+
+        <li>Noise reduction + <strong>silence trimming</strong>:<br>
+          <div class="duration" id="15_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("15")' id="15" src="https://dodiku.github.io/noise_reduction/02_samples_trimmed/04_voices.wav" controls preload></audio></li>
+
+        <li>Noise reduction + silence trimming + <strong>sound style enhancement</strong>:<br>
+          <div class="duration" id="16_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("16")' id="16" src="https://dodiku.github.io/noise_reduction/03_samples_enhanced/04_voices.wav" controls preload></audio></li>
+
+      </ul>
+
+      <h4>05_ambeint.m4a</h4>
+      <ul>
+
+        <li>Original sample:<br>
+          <div class="duration" id="17_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("17")' id="17" src="https://dodiku.github.io/noise_reduction/00_samples/05_ambeint.m4a" controls preload></audio></li>
+
+        <li><strong>Noise reduction:</strong><br>
+          <div class="duration" id="18_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("18")' id="18" src="https://dodiku.github.io/noise_reduction/01_samples_noise_reduced/05_ambeint.wav" controls preload></audio></li>
+
+        <li>Noise reduction + <strong>silence trimming</strong>:<br>
+          <div class="duration" id="19_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("19")' id="19" src="https://dodiku.github.io/noise_reduction/02_samples_trimmed/05_ambeint.wav" controls preload></audio></li>
+
+        <li>Noise reduction + silence trimming + <strong>sound style enhancement</strong>:<br>
+          <div class="duration" id="20_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("20")' id="20" src="https://dodiku.github.io/noise_reduction/03_samples_enhanced/05_ambeint.wav" controls preload></audio></li>
+
+      </ul>
+
+      <h4>06_office.m4a</h4>
+      <ul>
+
+        <li>Original sample:<br>
+          <div class="duration" id="21_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("21")' id="21" src="https://dodiku.github.io/noise_reduction/00_samples/06_office.m4a" controls preload></audio></li>
+
+        <li><strong>Noise reduction:</strong><br>
+          <div class="duration" id="22_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("22")' id="22" src="https://dodiku.github.io/noise_reduction/01_samples_noise_reduced/06_office.wav" controls preload></audio></li>
+
+        <li>Noise reduction + <strong>silence trimming</strong>:<br>
+          <div class="duration" id="23_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("23")' id="23" src="https://dodiku.github.io/noise_reduction/02_samples_trimmed/06_office.wav" controls preload></audio></li>
+
+        <li>Noise reduction + silence trimming + <strong>sound style enhancement</strong>:<br>
+          <div class="duration" id="24_duration">reading audio file duration...</div>
+          <audio oncanplaythrough='changeDuration("24")' id="24" src="https://dodiku.github.io/noise_reduction/03_samples_enhanced/06_office.wav" controls preload></audio></li>
+
       </ul>
 
     <h3>Further tests to do:</h3>
     <ul>
-      <li>Reverberation - Enhance the quality of the sound and improve style</li>
-      <li>Bass bosster - Enhance the quality of the sound and improve style</li>
       <li>Check if the speech manipulation is improving or harming the speech-to-text results and language recognition results.</li>
-      <li>The processes that were described above could happed on the fly, during the recording.</li>
+      <li>Keep on testing and experimenting with properties or maybe different solutions entirely.</li>
+      <li>Check the option to do these processes in runtime, during the recording (currently used algorithms do not support this).</li>
     </ul>
   <br>Dror
 </div>
-<script>
-  setTimeout(function(){
-      changeDuration("01");
-      changeDuration("02");
-      changeDuration("03");
-      changeDuration("04");
-  },1000);
-</script>
-
 </body>
 </html>
