@@ -70,7 +70,7 @@ def reduce_noise_centroid_mb(y, sr):
     threshold_h = np.max(cent)
     threshold_l = np.min(cent)
 
-    less_noise = AudioEffectsChain().lowshelf(gain=-30.0, frequency=threshold_l, slope=0.5).highshelf(gain=-30.0, frequency=threshold_h*1.2, slope=0.5).limiter(gain=10.0)
+    less_noise = AudioEffectsChain().lowshelf(gain=-30.0, frequency=threshold_l, slope=0.5).highshelf(gain=-30.0, frequency=threshold_h, slope=0.5).limiter(gain=10.0)
     # less_noise = AudioEffectsChain().lowpass(frequency=threshold_h).highpass(frequency=threshold_l)
     y_cleaned = less_noise(y)
 
