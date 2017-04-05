@@ -186,12 +186,130 @@
 
       </ul>
 
-    <h3>Further tests to do:</h3>
-    <ul>
-      <li>Check if the speech manipulation is improving or harming the speech-to-text results and language recognition results.</li>
-      <li>Keep on testing and experimenting with properties or maybe different solutions entirely.</li>
-      <li>Check the option to do these processes in runtime, during the recording (currently used algorithms do not support this).</li>
-    </ul>
+      <h4>Voices</h4>
+
+      <ul>
+        <li>Original sample<br>
+          <div class="duration" id='19_duration'>reading audio file duration...</div>
+          <audio id='19' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/04_voices_org.wav" controls preload
+          oncanplaythrough="document.getElementById('19_duration').innerHTML = 'duration: ' + document.getElementById('19').duration"></audio>
+        </li><br>
+
+        <li>Centroid: Reducing<br>
+          <div class="duration" id='20_duration'>reading audio file duration...</div>
+          <audio id='20' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/04_voices_ctr_s.wav" controls preload
+          oncanplaythrough="document.getElementById('20_duration').innerHTML = 'duration: ' + document.getElementById('20').duration"></audio>
+        </li><br>
+
+        <li>Centroid: Mid-boosting<br>
+          <div class="duration" id='21_duration'>reading audio file duration...</div>
+          <audio id='21' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/04_voices_ctr_mb.wav" controls preload
+          oncanplaythrough="document.getElementById('21_duration').innerHTML = 'duration: ' + document.getElementById('21').duration"></audio>
+        </li><br>
+
+        <li>Power / energie<br>
+          <div class="duration" id='22_duration'>reading audio file duration...</div>
+          <audio id='22' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/04_voices_pwr.wav" controls preload
+          oncanplaythrough="document.getElementById('22_duration').innerHTML = 'duration: ' + document.getElementById('22').duration"></audio>
+        </li><br>
+
+        <li>MFCC: Decreasing<br>
+          <div class="duration" id='23_duration'>reading audio file duration...</div>
+          <audio id='23' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/04_voices_mfcc_down.wav" controls preload
+          oncanplaythrough="document.getElementById('23_duration').innerHTML = 'duration: ' + document.getElementById('23').duration"></audio>
+        </li><br>
+
+        <li>MFCC: Increasing<br>
+          <div class="duration" id='24_duration'>reading audio file duration...</div>
+          <audio id='24' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/04_voices_mfcc_down.wav" controls preload
+          oncanplaythrough="document.getElementById('24_duration').innerHTML = 'duration: ' + document.getElementById('24').duration"></audio>
+        </li><br>
+
+      </ul>
+
+      <h4>Ambient</h4>
+
+      <ul>
+        <li>Original sample<br>
+          <div class="duration" id='25_duration'>reading audio file duration...</div>
+          <audio id='25' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/05_ambeint_org.wav" controls preload
+          oncanplaythrough="document.getElementById('25_duration').innerHTML = 'duration: ' + document.getElementById('25').duration"></audio>
+        </li><br>
+
+        <li>Centroid: Reducing<br>
+          <div class="duration" id='26_duration'>reading audio file duration...</div>
+          <audio id='26' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/05_ambeint_ctr_s.wav" controls preload
+          oncanplaythrough="document.getElementById('26_duration').innerHTML = 'duration: ' + document.getElementById('26').duration"></audio>
+        </li><br>
+
+        <li>Centroid: Mid-boosting<br>
+          <div class="duration" id='27_duration'>reading audio file duration...</div>
+          <audio id='27' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/05_ambeint_ctr_mb.wav" controls preload
+          oncanplaythrough="document.getElementById('27_duration').innerHTML = 'duration: ' + document.getElementById('27').duration"></audio>
+        </li><br>
+
+        <li>Power / energie<br>
+          <div class="duration" id='28_duration'>reading audio file duration...</div>
+          <audio id='28' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/05_ambeint_pwr.wav" controls preload
+          oncanplaythrough="document.getElementById('28_duration').innerHTML = 'duration: ' + document.getElementById('28').duration"></audio>
+        </li><br>
+
+        <li>MFCC: Decreasing<br>
+          <div class="duration" id='29_duration'>reading audio file duration...</div>
+          <audio id='29' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/05_ambeint_mfcc_down.wav" controls preload
+          oncanplaythrough="document.getElementById('29_duration').innerHTML = 'duration: ' + document.getElementById('29').duration"></audio>
+        </li><br>
+
+        <li>MFCC: Increasing<br>
+          <div class="duration" id='30_duration'>reading audio file duration...</div>
+          <audio id='30' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/05_ambeint_mfcc_down.wav" controls preload
+          oncanplaythrough="document.getElementById('30_duration').innerHTML = 'duration: ' + document.getElementById('30').duration"></audio>
+        </li><br>
+
+      </ul>
+
+
+      <h4>Office</h4>
+
+      <ul>
+        <li>Original sample<br>
+          <div class="duration" id='31_duration'>reading audio file duration...</div>
+          <audio id='31' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/06_office_org.wav" controls preload
+          oncanplaythrough="document.getElementById('31_duration').innerHTML = 'duration: ' + document.getElementById('31').duration"></audio>
+        </li><br>
+
+        <li>Centroid: Reducing<br>
+          <div class="duration" id='32_duration'>reading audio file duration...</div>
+          <audio id='32' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/06_office_ctr_s.wav" controls preload
+          oncanplaythrough="document.getElementById('32_duration').innerHTML = 'duration: ' + document.getElementById('32').duration"></audio>
+        </li><br>
+
+        <li>Centroid: Mid-boosting<br>
+          <div class="duration" id='33_duration'>reading audio file duration...</div>
+          <audio id='33' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/06_office_ctr_mb.wav" controls preload
+          oncanplaythrough="document.getElementById('33_duration').innerHTML = 'duration: ' + document.getElementById('33').duration"></audio>
+        </li><br>
+
+        <li>Power / energie<br>
+          <div class="duration" id='34_duration'>reading audio file duration...</div>
+          <audio id='34' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/06_office_pwr.wav" controls preload
+          oncanplaythrough="document.getElementById('34_duration').innerHTML = 'duration: ' + document.getElementById('34').duration"></audio>
+        </li><br>
+
+        <li>MFCC: Decreasing<br>
+          <div class="duration" id='35_duration'>reading audio file duration...</div>
+          <audio id='35' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/06_office_mfcc_down.wav" controls preload
+          oncanplaythrough="document.getElementById('35_duration').innerHTML = 'duration: ' + document.getElementById('35').duration"></audio>
+        </li><br>
+
+        <li>MFCC: Increasing<br>
+          <div class="duration" id='36_duration'>reading audio file duration...</div>
+          <audio id='36' src="https://dodiku.github.io/noise_reduction/01_samples_trimmed_noise_reduced/06_office_mfcc_down.wav" controls preload
+          oncanplaythrough="document.getElementById('36_duration').innerHTML = 'duration: ' + document.getElementById('36').duration"></audio>
+        </li><br>
+
+      </ul>
+
   <br>Dror
 </div>
 </body>
