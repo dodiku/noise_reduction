@@ -38,7 +38,7 @@ def reduce_noise_power(y, sr):
     threshold_h = round(np.median(cent))*1.5
     threshold_l = round(np.median(cent))*0.2
 
-    less_noise = AudioEffectsChain().lowshelf(gain=-12.0, frequency=threshold_l, slope=0.5).highshelf(gain=-12.0, frequency=threshold_h, slope=0.5)
+    less_noise = AudioEffectsChain().lowshelf(gain=-30.0, frequency=threshold_l, slope=1).highshelf(gain=-12.0, frequency=threshold_h, slope=0.5)
     y_clean = less_noise(y)
 
     return y_clean
