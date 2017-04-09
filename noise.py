@@ -3,6 +3,8 @@ from pysndfx import AudioEffectsChain
 import numpy as np
 import math
 import python_speech_features
+import scipy as sp
+from scipy import signal
 
 # http://python-speech-features.readthedocs.io/en/latest/
 # https://github.com/jameslyons/python_speech_features
@@ -36,9 +38,9 @@ def reduce_noise_power(y, sr):
     cent = librosa.feature.spectral_centroid(y=y, sr=sr)
 
     threshold_h = round(np.median(cent))*1.5
-    threshold_l = round(np.median(cent))*0.2
+    threshold_l = round(np.median(cent))*0.1
 
-    less_noise = AudioEffectsChain().lowshelf(gain=-30.0, frequency=threshold_l, slope=1).highshelf(gain=-12.0, frequency=threshold_h, slope=0.5)
+    less_noise = AudioEffectsChain().lowshelf(gain=-30.0, frequency=threshold_l, slope=0.8).highshelf(gain=-12.0, frequency=threshold_h, slope=0.5)#.limiter(gain=6.0)
     y_clean = less_noise(y)
 
     return y_clean
@@ -158,6 +160,17 @@ def reduce_noise_mfcc_up(y, sr):
     return (y_speach_boosted)
 
 '''------------------------------------
+NOISE REDUCTION USING MEDIAN:
+    receives an audio matrix,
+    returns the matrix after gain reduction on noise
+------------------------------------'''
+
+def reduce_noise_median(y, sr):
+    y = sp.signal.medfilt(y,3)
+    return (y)
+
+
+'''------------------------------------
 SILENCE TRIMMER:
     receives an audio matrix,
     returns an audio matrix with less silence and the amout of time that was trimmed
@@ -218,6 +231,7 @@ for s in samples:
     y_reduced_centroid_mb = reduce_noise_centroid_mb(y, sr)
     y_reduced_mfcc_up = reduce_noise_mfcc_up(y, sr)
     y_reduced_mfcc_down = reduce_noise_mfcc_down(y, sr)
+    y_reduced_median = reduce_noise_median(y, sr)
 
     # trimming silences
     y_reduced_power, time_trimmed = trim_silence(y_reduced_power)
@@ -238,10 +252,13 @@ for s in samples:
     y_reduced_mfcc_down, time_trimmed = trim_silence(y_reduced_mfcc_down)
     # print (time_trimmed)
 
+    y_reduced_median, time_trimmed = trim_silence(y_reduced_median)
+
     # generating output file [1]
     output_file('01_samples_trimmed_noise_reduced/' ,filename, y_reduced_power, sr, '_pwr')
     output_file('01_samples_trimmed_noise_reduced/' ,filename, y_reduced_centroid_s, sr, '_ctr_s')
     output_file('01_samples_trimmed_noise_reduced/' ,filename, y_reduced_centroid_mb, sr, '_ctr_mb')
     output_file('01_samples_trimmed_noise_reduced/' ,filename, y_reduced_mfcc_up, sr, '_mfcc_up')
     output_file('01_samples_trimmed_noise_reduced/' ,filename, y_reduced_mfcc_down, sr, '_mfcc_down')
+    output_file('01_samples_trimmed_noise_reduced/' ,filename, y_reduced_median, sr, '_median')
     output_file('01_samples_trimmed_noise_reduced/' ,filename, y, sr, '_org')
