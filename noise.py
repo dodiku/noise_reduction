@@ -5,6 +5,7 @@ import math
 import python_speech_features
 import scipy as sp
 from scipy import signal
+import soundfile as sf
 
 # http://python-speech-features.readthedocs.io/en/latest/
 # https://github.com/jameslyons/python_speech_features
@@ -200,7 +201,7 @@ OUTPUT GENERATOR:
 ------------------------------------'''
 def output_file(destination ,filename, y, sr, ext=""):
     destination = destination + filename[:-4] + ext + '.wav'
-    librosa.output.write_wav(destination, y, sr)
+    sf.write(destination, y, sr)
 
 
 '''------------------------------------
